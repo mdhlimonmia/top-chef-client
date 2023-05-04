@@ -1,9 +1,11 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Chefs = (props) => {
-  const { name, picture, experience, number_of_recipes, likes, bio } =
-    props.chef;
+  const { id, name, picture, experience, number_of_recipes, likes, bio } = props.chef;
+
+  
   return (
     <div className="mb-5">
       <Card border="primary" style={{ width: "18rem" }}>
@@ -24,7 +26,7 @@ const Chefs = (props) => {
           </Card.Text>
           <Card.Footer className="d-flex align-items-center justify-content-between">
             <small className="text-primary"><b>Likes: {likes}</b></small>
-            <Button variant="primary">View Recipes</Button>
+            <Link  to ={`recipes/${id}`} ><Button variant="primary">View Recipes</Button></Link>
           </Card.Footer>
         </Card.Body>
       </Card>
