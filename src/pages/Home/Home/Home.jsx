@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import Container from "react-bootstrap/Container";
+import Chefs from "../Chefs/Chefs";
+import './Home.css'
 
 const Home = () => {
   const [chefs, setChefs] = useState([]);
@@ -8,7 +10,7 @@ const Home = () => {
   useEffect(() =>{
     fetch('http://localhost:5000/chefs')
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => setChefs(data))
     .catch(error => console.log(error))
   },[])
 
@@ -33,6 +35,14 @@ const Home = () => {
         <div>
           <h3> <span className="text-primary">Top Chefs</span> Will Serve You The Delicious Food Of Famous Chefs </h3>
         </div>
+      </Container>
+      <Container className="chefs mt-12 ">
+        {
+          chefs.map(chef => <Chefs 
+          key={chef.id}
+          chef = {chef}
+          ></Chefs>)
+        }
       </Container>
     </div>
   );
