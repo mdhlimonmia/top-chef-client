@@ -9,18 +9,16 @@ const Chefs = (props) => {
   return (
     <div className="mb-5">
       <Card border="primary" style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={picture} />
+        <Card.Img variant="top img-fluid" style={{ height: '14rem' }} src={picture} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
             <samp className="text-primary">
-              {" "}
               {experience} Year of experience
             </samp>
           </Card.Text>
           <Card.Text>
             <samp className="text-dark">
-              {" "}
               Number of Recipes: {number_of_recipes}
             </samp>
           </Card.Text>

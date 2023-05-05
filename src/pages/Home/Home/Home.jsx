@@ -22,7 +22,7 @@ const Home = () => {
           text.
         </Marquee>
       </Container>
-      <Container className="d-flex mt-5 mx-auto align-items-center">
+      <Container className="banner mt-5 mx-auto align-items-center">
         <div>
           <img
             className="img-thumbnail pe-5"
@@ -32,11 +32,12 @@ const Home = () => {
             alt=""
           />
         </div>
-        <div>
-          <h3> <span className="text-primary">Top Chefs</span> Will Serve You The Delicious Food Of Famous Chefs </h3>
+        <div className="ms-5">
+          <h3> <span className="text-primary">Top Chefs</span> <br /> Will Serve You The Delicious Food Of Famous Chefs </h3>
         </div>
       </Container>
-      <Container className="chefs mt-12 ">
+      <Container className="mt-5 text-center fs-2 text-primary"><b>Our Top Chefs:</b></Container>
+      <Container className="chefs mt-5 ">
         {
           chefs.map(chef => <Chefs 
           key={chef.id}
