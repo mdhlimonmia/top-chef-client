@@ -7,6 +7,7 @@ import Recipes from "../pages/Home/Recipes/Recipes";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import Terms from "../Shared/Terms/Terms";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/recipes/:id',
-        element: <Recipes></Recipes>,
+        element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
         loader: () => fetch('https://top-chefs-server-mdhlimonmia.vercel.app/chefs'),
       },
       {

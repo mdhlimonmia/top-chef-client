@@ -24,16 +24,16 @@ const NavigationBar = () => {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/blogs">Blog</Nav.Link>
-            <Nav.Link href="#pricing">About</Nav.Link>
-            <Nav>
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav className="justify-content-center">
+              <div className="ms-5 d-flex">
               {user && (
-                <FaRegUserCircle style={{ fontSize: "2rem" }}>
-                  {" "}
-                </FaRegUserCircle>
+                <b className="text-light text-center">{user?.displayName}</b>
               )}
+              </div>
               ,
               {user ? (
-                <Button onClick={handleLogOut} variant="secondary">
+                <Button className="ms-5" onClick={handleLogOut} variant="secondary">
                   Logout
                 </Button>
               ) : (
