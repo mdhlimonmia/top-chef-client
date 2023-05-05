@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       {
-        path: "home",
+        path: "/",
         element: <Home></Home>,
       },
       {
@@ -19,9 +19,9 @@ const router = createBrowserRouter([
         element: <Chefs></Chefs>
       },
       {
-        path: 'home/recipes/:id',
+        path: '/recipes/:id',
         element: <Recipes></Recipes>,
-        loader: () => fetch('http://localhost:5000/chefs'),
+        loader: () => fetch('https://top-chefs-server-mdhlimonmia.vercel.app/chefs'),
       },
       {
         path: "blogs",
