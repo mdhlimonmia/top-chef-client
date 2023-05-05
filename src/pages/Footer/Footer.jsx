@@ -1,9 +1,9 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <div className="bg-primary">
+    <div className="bg-primary text-center text-md-left mt-5">  
       <div className="card text-center bg-dark text-light">
         <div className="card-header">Top Chefs</div>
         <Row>
