@@ -25,11 +25,13 @@ const Recipe = (props) => {
           </Card.Text>
           <b>Ingredients:</b>
           <Card.Text>
+            <div>
             {
               ingredients.map(ingredient => {
                 <p>{ingredient}</p>
               })
             }
+            </div>
           </Card.Text>
         </Card.Body>
         <Card.Footer>
