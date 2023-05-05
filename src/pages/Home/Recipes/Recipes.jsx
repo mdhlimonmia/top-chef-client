@@ -12,7 +12,7 @@ const Recipes = () => {
     <div>
       <Container>
 
-        <div>
+        <div className="mb-5">
           <Card>
             <Card.Img variant="top" src={picture} />
             <Card.Body>
@@ -31,7 +31,7 @@ const Recipes = () => {
             </Card.Body>
           </Card>
         </div>
-
+        <b className="mt-5 fs-2 text-primary">Some Recipes:</b>
         <div className="d-flex mt-5 g-4">
             {
                 recipe.recipes.map(r => <Recipe

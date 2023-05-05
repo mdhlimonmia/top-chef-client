@@ -15,7 +15,7 @@ const Recipe = (props) => {
 
   return (
     <div>
-      <Card style={{ width: '21rem' }} className="me-5">
+      <Card style={{ width: '21rem' , height: '38rem' } } className="me-5">
         <Card.Img variant="top" src={image} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
