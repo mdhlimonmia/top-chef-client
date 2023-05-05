@@ -1,9 +1,18 @@
-import React from "react";
-import { Card } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, Toast } from "react-bootstrap";
+import { FaRegHeart } from "react-icons/fa";
 
 
 const Recipe = (props) => {
+  const [able, setAble] = useState(true);
   const { name, image, ingredients, cooking_method, rating } = props.recipe;
+
+  const fevouriteHandel = ()=>{
+    setAble(!able);
+    console.log(able);
+    Toast("Thanks!!!");
+  }
+
   return (
     <div>
       <Card style={{ width: '21rem' }} className="me-5">
@@ -28,8 +37,8 @@ const Recipe = (props) => {
             <div>
             <small className="text-muted">Rating: <b className="text-warning">{rating} </b></small>
             </div>
-            <div>
-            <small className="text-muted">fevourite </small>
+            <div  className={`${able ? "visible" : "invisible"}`}>
+            <small className="btn bg-primary text-light"  onClick={fevouriteHandel}>fevourite <FaRegHeart className="text-warning"></FaRegHeart></small>
             </div>
           </div>
         </Card.Footer>
