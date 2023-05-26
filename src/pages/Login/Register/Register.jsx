@@ -5,7 +5,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import { useState } from 'react';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, error, setError } = useContext(AuthContext);
     const [accepted, setAccepted] = useState(false);
 
     const handleRegister = event => {
@@ -20,10 +20,10 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
-                console.log(createdUser);
+                // console.log(createdUser);
             })
-            .catch(error => {
-                console.log(error);
+            .catch(erro => {
+                setError(erro.message);
             })
     }
 
@@ -63,6 +63,7 @@ const Register = () => {
                 <Button variant="primary" disabled={!accepted} type="submit">
                     Register
                 </Button>
+                <p> {error} </p>
                 <br />
                 <Form.Text className="text-secondary">
                     Already Have an Account? <Link to="/login">Login</Link>

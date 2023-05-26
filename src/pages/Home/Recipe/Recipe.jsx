@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Card, Toast } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import { Toaster, toast } from "react-hot-toast";
 import { FaRegHeart } from "react-icons/fa";
+
 
 
 const Recipe = (props) => {
@@ -10,7 +12,7 @@ const Recipe = (props) => {
   const fevouriteHandel = ()=>{
     setAble(!able);
     console.log(able);
-    Toast("Thanks!!!");
+    toast("Favourite Added!!");
   }
 
   return (
@@ -45,6 +47,8 @@ const Recipe = (props) => {
           </div>
         </Card.Footer>
       </Card>
+      <Toaster />
+
     </div>
   );
 };

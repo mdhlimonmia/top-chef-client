@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Login = () => {
-  const { signIn, signInGoogle } = useContext(AuthContext);
+  const { signIn, signInGoogle, error, setError } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log("login page location", location);
@@ -20,11 +20,11 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         navigate(from, { replace: true });
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((erro) => {
+        setError(erro.message);
       });
   };
 
@@ -32,11 +32,11 @@ const Login = () => {
     signInGoogle()
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
   return (
@@ -67,6 +67,7 @@ const Login = () => {
           Login
         </Button>
         <br />
+        <p>{error}</p>
         <Form.Text className="text-secondary">
           Don't Have an Account? <Link to="/register">Register</Link>
         </Form.Text>

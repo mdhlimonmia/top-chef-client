@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 export const AuthContext = createContext(null);
 
+const [error, setError] = ("");
 const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
@@ -51,7 +52,9 @@ const AuthProvider = ({children}) => {
         createUser,
         signIn,
         logOut,
-        signInGoogle
+        signInGoogle,
+        error,
+        setError
     }
 
     return (
